@@ -1,4 +1,3 @@
-using System;
 using Eto.Forms;
 using Eto.Drawing;
 using System.Collections.ObjectModel;
@@ -6,7 +5,7 @@ using System.Collections.ObjectModel;
 namespace EtoApp1
 {
 
-	class tempPOCO
+    class tempPOCO
 	{
 		public string currentTemp;
 		public string count;
@@ -20,6 +19,7 @@ namespace EtoApp1
 			ClientSize = new Size(800, 525);
 			Title = "Cube3Editor";
 
+
 			var printerModel = new TableLayout
 			{
 				Spacing = new Size(5, 5), // space between each cell
@@ -28,15 +28,15 @@ namespace EtoApp1
 				{
 					new TableRow(
 						new TableCell( new Label {Text="Printer Model:", TextAlignment=TextAlignment.Right }, true),
-						new TableCell(new ComboBox {Items = { "Cube3", "Ekocycle", "CubePro" } }, true)
+						new TableCell(MainFormControls.cbPrinterModel, true)
 						),
 					new TableRow(
 						new TableCell( new Label {Text="Firmware:", TextAlignment=TextAlignment.Right }, true),
-						new TableCell(new ComboBox {Items = { "V1.14B", "V1.05", "V1.87" } }, true)
+						new TableCell(MainFormControls.cbFirmwareVersion, true)
 						),
 					new TableRow(
 						new TableCell( new Label {Text="MinFirmware:", TextAlignment=TextAlignment.Right }, true),
-						new TableCell(new ComboBox {Items = { "V1.14B", "V1.05", "V1.87" } }, true)
+						new TableCell(MainFormControls.cbMinFirmwareVersion, true)
 						),
 					//new TableRow { ScaleHeight = true }
 				}
