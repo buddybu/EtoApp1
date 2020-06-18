@@ -5,12 +5,6 @@ using System.Collections.ObjectModel;
 namespace EtoApp1
 {
 
-    class tempPOCO
-	{
-		public string currentTemp;
-		public string count;
-		public string newTemp;
-	};
 
 	public partial class MainForm : Form
     {
@@ -222,12 +216,12 @@ namespace EtoApp1
 
         private GridView CreateTempGrid()
         {
-			GridView gv = new GridView { DataStore = new ObservableCollection<tempPOCO>() };
+			GridView gv = new GridView { DataStore = new ObservableCollection<MainFormData.TempPOCO>() };
 			gv.Columns.Add(new GridColumn
 			{
 				DataCell = new TextBoxCell
 				{
-					Binding = Binding.Property<tempPOCO, string>(r => r.currentTemp),
+					Binding = Binding.Property<MainFormData.TempPOCO, string>(r => r.currentTemp),
 				},
 				HeaderText = "Temp"
 			});
@@ -235,7 +229,7 @@ namespace EtoApp1
 			{
 				DataCell = new TextBoxCell
 				{
-					Binding = Binding.Property<tempPOCO, string>(r => r.count),
+					Binding = Binding.Property<MainFormData.TempPOCO, string>(r => r.count),
 				},
 				HeaderText = "Count"
 			});
@@ -243,7 +237,7 @@ namespace EtoApp1
 			{
 				DataCell = new TextBoxCell
 				{
-					Binding = Binding.Property<tempPOCO, string>(r => r.newTemp),
+					Binding = Binding.Property<MainFormData.TempPOCO, string>(r => r.newTemp),
 				},
 				HeaderText = "Modifier"
 			});
